@@ -12,7 +12,6 @@ def make_refund_accepted(modeladmin, request, queryset):
 
 make_refund_accepted.short_description = 'Update orders to refund granted'
 
-
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['user',
                     'ordered',
@@ -35,7 +34,6 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ['user',
                    'ordered',
                    'being_delivered',
-                   'received',
                    'refund_requested',
                    'refund_granted']
     search_fields = [
@@ -93,7 +91,6 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Slide)
 admin.site.register(OrderItem)
 admin.site.register(Order, OrderAdmin)
-admin.site.register(Payment)
 admin.site.register(Coupon)
 admin.site.register(Refund)
 admin.site.register(BillingAddress, AddressAdmin)
